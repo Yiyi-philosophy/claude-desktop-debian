@@ -1524,10 +1524,18 @@ class KvmBackend extends BackendBase {
     }
 
     async writeStdin(params) {
+        // Guest RPC treats stdin as a notification (fire-and-forget),
+        // not a request. Sending as type:"request" returns "unknown method".
+        if (!this._guestConn || !this.guestConnected) {
+            log('KvmBackend: writeStdin: guest not connected');
+            return {};
+        }
         try {
-            await this._forwardToGuest({ method: 'writeStdin', params });
+            writeMessage(this._guestConn, {
+                type: 'notification', method: 'stdin', params,
+            });
         } catch (e) {
-            log(`KvmBackend: writeStdin forward failed: ${e.message}`);
+            log(`KvmBackend: writeStdin failed: ${e.message}`);
         }
         return {};
     }
