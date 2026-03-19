@@ -179,6 +179,7 @@ Special thanks to:
 - **[daa25209](https://github.com/daa25209)** for detailed root cause analysis of the cowork platform gate crash and patch script
 - **[noctuum](https://github.com/noctuum)** for the `CLAUDE_MENU_BAR` env var for configurable menu bar visibility
 - **[typedrat](https://github.com/typedrat)** for the NixOS flake integration with build.sh, node-pty derivation, and CI auto-update
+- **[cbonnissent](https://github.com/cbonnissent)** for reverse-engineering the Cowork VM guest RPC protocol and fixing the KVM startup blocker
 
 ## Sponsorship
 
