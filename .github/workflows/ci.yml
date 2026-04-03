@@ -211,7 +211,8 @@ jobs:
           fi
 
       - name: Run compare-releases (upstream change)
-        if: steps.prev.outcome == 'success' && steps.prev.outputs.type == 'upstream'
+        if: false # disabled — release notes are managed manually
+        # was: steps.prev.outcome == 'success' && steps.prev.outputs.type == 'upstream'
         timeout-minutes: 180
         continue-on-error: true
         env:
