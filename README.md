@@ -187,6 +187,7 @@ Special thanks to:
 - **[sabiut](https://github.com/sabiut)**
   - `--doctor` diagnostic command
   - SHA-256 checksum validation for downloads
+  - Post-build integration tests for deb, rpm, and AppImage artifacts
 - **[milog1994](https://github.com/milog1994)**
   - Popup detection
   - Functional stubs
